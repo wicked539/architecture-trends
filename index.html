@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/synyx.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,8 +16,65 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<img src="assets/synyx_rgb_farbe.svg">
+				</section>
+				<section>Trends in modern software architecture... and how to avoid them</section>
+				<section>
+					<section><h2>Hexagonal Architecture</h2></section>
+					<section><h3>What is it?</h3>
+						<p class="fragment">Typical, layered architectures typical provide abstractions "upward" from the domain model used in the database</p>
+						<p class="fragment">Hexagonal architecture abstracts not only upward from the database, towards UI, Messaging System, etc as well</p>
+						<img class="fragment" src="assets/Hexagonal.svg" width="450" height="300">
+						<aside class="notes">
+							Layered abstractions around the core domain model & business logic towards UI, DB, Messaging Systems etc.
+						</aside>
+					</section>
+					<section><h3>Promise</h3>
+						<p class="fragment">Protect your core domain model against leaking, thus making sure that changes in outer layers can never force you to change the core</p>
+					</section>
+					<section><h3>Pitfalls</h3>
+						<p class="fragment">You end up with tons and tons of interfaces and duplications that constantly change during development, creating a unmaintainable mess</p>
+					</section>
+					<section><h3>Conclusion</h3>
+						<p class="fragment">YAGNI</p>
+					</section>
+				</section>
+				<section>
+					<section><h2>Reactive Stacks</h2></section>
+					<section><h3>What is it?</h3>
+						<p class="fragment">Non-blocking APIs typically invoke a callback function when their work is done</p>
+					</section>
+					<section><h3>Promise</h3>
+						<p class="fragment">Because threads are no longer blocked waiting for downstream work to continue, we can build very responsive API</p>
+					</section>
+					<section><h3>Pitfalls</h3>
+						<p class="fragment">The programming model is very different from classic, imperative code</p>
+						<p class="fragment">The learning curve is very steep, it takes years (!) for a team of old-school java devs to fully embrace non-blocking APIs</p>
+					</section>
+					<section><h3>Conclusion</h3>
+						<p class="fragment">YAGNI</p>
+					</section>
+				</section>
+				<section>
+					<section><h2>CQRS</h2></section>
+					<section><h3>What is it?</h3>
+						<p class="fragment">Command-query responsibilty segregation essentials means separating the write- and the read-models of your application</p>
+					</section>
+					<section><h3>Promise</h3>
+						<p class="fragment">Applications with an asymmetric read-write load (lots of writes, very little reads) and APIs (read operations require computed outputs) benefit from seperate models</p>
+					</section>
+					<section><h3>Pitfalls</h3>
+						<p class="fragment">Maintaining separate models, along with controller classes, business logic, persistence layers etc, leads to far more complex software projects</p>
+					</section>
+					<section><h3>Conclusion</h3>
+						<p class="fragment">YAGNI</p>
+					</section>
+				</section>
+
+				
+				<section><h2>Event Sourcing</h2></section>
+				<section><h2>Server-Side Rendering</h2></section>
 			</div>
 		</div>
 
