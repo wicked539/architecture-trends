@@ -123,10 +123,11 @@
 					</section>
 				</section>
 				<section>
-					<section><h2>Server-Side Rendering</h2></section>
+					<section><h2>Server-Side Rendering of SPAs</h2></section>
 					<section><h3>What is it?</h3>
 						<p class="fragment">"Classic" SPAs fetch only barebone HTML and lots of resources via HTTP, the app is rendered entirely within the browser</p>
-						<p class="fragment">Server-Side Rendered apps are pre-rendered on the server and transmitted as acutal, usuable HTML to the brwoser</p>
+						<p class="fragment">Server-Side Rendered apps are pre-rendered on the server and transmitted as acutal, usuable HTML to the browser</p>
+						<p class="fragment">The app is then "hydrated" in the browser, making it fully operational</p>
 					</section>
 					<section><h3>Promise</h3>
 						<p class="fragment">Instead of downloading multiple megabytes of resources prior to bootstrapping, the first assets to be transferred are already usable HTML</p>
@@ -136,8 +137,13 @@
 						<p class="fragment">We need to build an SPA that can be rendered in the backend and then be hydrated in the browser</p>
 						<p class="fragment">There are SPA frameworks promising to deliver server-side rendering with a smooth developer experience (hi Nuxt &#128075;), but offer a questionable experience in other aspects (our test API is still in development and should not be used for production &#128169;)</p>
 					</section>
+					<section><h3>Alternatives</h3>
+						<p class="fragment">On mondern 4g/5g networks, transmitting a few megabytes is no longer an issue</p>
+						<p class="fragment">Consider usabilty instead: On mobile devives, building offline-first apps that rarely need a full-page reload is much more desirable</p>
+					</section>
 					<section><h3>Conclusion</h3>
-						<p class="fragment">YAGNI</p>
+						<p class="fragment">Server-side templating is great</p>
+						<p class="fragment">Server-side rendered SPAs add a huge amount of complexity, use with care</p>
 					</section>
 				</section>
 			</div>
