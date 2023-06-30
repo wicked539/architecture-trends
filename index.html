@@ -77,13 +77,27 @@
 						<p class="fragment">Command-query responsibilty segregation essentials means separating the write- and the read-models of your application</p>
 					</section>
 					<section><h3>Promise</h3>
-						<p class="fragment">Applications with an asymmetric read-write load (lots of writes, very little reads) and APIs (read operations require computed outputs) benefit from seperate models</p>
+						<p class="fragment">Applications with an asymmetric read-write load (lots of writes, very little reads) and APIs (read operations require computed outputs, message/command-driven write APIs) benefit from seperate models</p>
 					</section>
 					<section><h3>Pitfalls</h3>
 						<p class="fragment">Maintaining separate models, along with controller classes, business logic, persistence layers etc, leads to far more complex software projects</p>
+						<p class="fragment">Separate models implcitly lead to eventual consistency (stale reads)</p>
+					</section>
+					<section><h3>Alternatives</h3>
+						<p class="fragment">Always consider using a plain CRUD API first</p>
+						<p class="fragment">When starting out with CRUD API, we can "evolve" a separate write API over time, keeping the CRUD API for read operations</p>
 					</section>
 					<section><h3>Conclusion</h3>
-						<p class="fragment">YAGNI</p>
+						<p class="fragment">From Greg Young's blog:</p>
+						<blockquote class="fragment" cite="https://gregfyoung.wordpress.com/2012/03/02/cqrs/" style="text-align: left;">
+					   	CQRS is not a silver bullet<br>
+						CQRS is not a top level architecture<br>
+						CQRS is not new<br>
+						CQRS is not shiny<br>
+						CQRS will not make your jump shot any better<br>
+						[...]<br>
+						CQRS can open many doors.
+					  	</blockquote>
 					</section>
 				</section>
 				<section>
