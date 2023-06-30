@@ -110,12 +110,16 @@
 						<p class="fragment">All domain objects implicitly have a history</p>
 					</section>
 					<section><h3>Pitfalls</h3>
-						<p class="fragment">Very complex persistence pattern when compared to classic CRUD</p>
+						<p class="fragment">Very complex persistence pattern</p>
 						<p class="fragment">Usually implemented along with CQRS, leading to expotentially more complex software systems</p>
 						<p class="fragment">When used with CQRS, we aren't allowed to query the aggregates! Instead, we have to provide separate read models called projections</p>
 					</section>
+					<section><h3>Alternatives</h3>
+						<p class="fragment">Event-driven systems can easily be build using CRUD APIs</p>
+						<p class="fragment">When a history of domain objects is required (eg, for auditing), consider using envers</p>
+					</section>
 					<section><h3>Conclusion</h3>
-						<p class="fragment">YAGNI</p>
+						<p class="fragment">Unless you're building a real-time stock trading system, don't do it</p>
 					</section>
 				</section>
 				<section>
