@@ -36,8 +36,13 @@
 					<section><h3>Pitfalls</h3>
 						<p class="fragment">You end up with tons and tons of interfaces and duplications that constantly change during development, creating a unmaintainable mess</p>
 					</section>
+					<section><h3>Alternatives</h3>
+						<p class="fragment">Apply abstractions where they make sense (eg, around your database entities)</p>
+						<p class="fragment">Apply common sense everywhere else</p>
+					</section>
 					<section><h3>Conclusion</h3>
-						<p class="fragment">YAGNI</p>
+						<p class="fragment">Preventing your core domain model from leaking to the web is common sense</p>
+						<p class="fragment">Preventing everything from leaking everywhere is ridiculous</p>
 					</section>
 				</section>
 				<section>
@@ -51,9 +56,19 @@
 					<section><h3>Pitfalls</h3>
 						<p class="fragment">The programming model is very different from classic, imperative code</p>
 						<p class="fragment">The learning curve is very steep, it takes years (!) for a team of old-school java devs to fully embrace non-blocking APIs</p>
+						<p class="fragment">Can be fully leveraged only when downstream APIs (database, external systems, ...) can also be used in a reactive way</p>
+					</section>
+					<section><h3>Alternatives</h3>
+						<p class="fragment">Consider expected load scenarios before making design decisions</p>
+						<p class="fragment">In most cases, horizontal scaling might prove to be more cost-efficient</p>
 					</section>
 					<section><h3>Conclusion</h3>
-						<p class="fragment">YAGNI</p>
+						<p class="fragment">From the Spring WebFlux documentation:</p>
+						<p class="fragment">
+							<q cite="https://docs.spring.io/spring-framework/reference/web/webflux/new-framework.html">
+						    We expect that, for a wide range of applications, the shift is unnecessary.
+						  	</q>
+						</p>
 					</section>
 				</section>
 				<section>
