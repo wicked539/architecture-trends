@@ -68,10 +68,19 @@
 				<section>
 					<section><h2>Reactive Stacks</h2></section>
 					<section><h3>What is it?</h3>
-						<p class="fragment">Non-blocking APIs typically invoke a callback function when their work is done</p>
+						<p class="fragment">Classic programming models block the current thread while handling an event</p>
+						<p class="fragment">Non-blocking APIs typically register a function to be called when work is done</p>
+
+						<aside class="notes">
+							<ul>
+								<li>Implementation: observer pattern</li>
+								<li>We need to handle streams of events, "reactive streams"</li>
+								<li>Including callbacks for error handling</li>
+							</li>
+						</aside>
 					</section>
 					<section><h3>Promise</h3>
-						<p class="fragment">Because threads are no longer blocked waiting for downstream work to continue, we can build very responsive API</p>
+						<p class="fragment">Because threads are no longer blocked waiting for downstream work to continue, we can build very responsive APIs, easily handling tens of thousands of requests in seconds</p>
 					</section>
 					<section><h3>Pitfalls</h3>
 						<p class="fragment">The programming model is very different from classic, imperative code</p>
