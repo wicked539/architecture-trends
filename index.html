@@ -25,20 +25,25 @@
 					<section><h3>What is it?</h3>
 						<div style="display: flex;">
 							<div class="fragment" style="flex: 1">
-								<img src="assets/three-tier.png" height="400">
+								<div class="r-stack">
+									<img src="assets/three-tier.png" height="400">
+								</div>
 								<p>Layered</p>
 							</div>
 							<div class="fragment" style="flex: 2">
-								<img src="assets/hexagonal.png" height="400">
+								<div class="r-stack">
+									<img class="fragment" src="assets/hexagonal.png" height="400">
+									<img class="fragment" src="assets/hexagonal-ports.png" height="400">
+								</div>
 								<p>Hexagonal</p>	
 							</div>
 						</div>
 
 						<aside class="notes">
 							<ul>
-								<li>Typical, layered architectures typical provide abstractions "upward" from the domain model used in tli database</li>
-								<li>Hexagonal architecture abstracts not only upward from the database, towards UI, Messaging System, eli as well</li>
-								<li>Layered abstractions around the core domain model & business logic towards UI, DB, Messaging Systems etc.</li>
+								<li>Layered: Upper layers use lower layers directly</li>
+								<li>Alistair Cockburn, 2015, "Ports&Adapters"</li>
+								<li>Inner layers must only use the ports they define</li>
 							</li>
 						</aside>
 					</section>
