@@ -23,11 +23,23 @@
 				<section>
 					<section><h2>Hexagonal Architecture</h2></section>
 					<section><h3>What is it?</h3>
-						<p class="fragment">Typical, layered architectures typical provide abstractions "upward" from the domain model used in the database</p>
-						<p class="fragment">Hexagonal architecture abstracts not only upward from the database, towards UI, Messaging System, etc as well</p>
-						<img class="fragment" src="assets/Hexagonal.svg" width="450" height="300">
+						<div style="display: flex;">
+							<div class="fragment" style="flex: 1">
+								<img src="assets/three-tier.png" height="400">
+								<p>Layered</p>
+							</div>
+							<div class="fragment" style="flex: 2">
+								<img src="assets/hexagonal.png" height="400">
+								<p>Hexagonal</p>	
+							</div>
+						</div>
+
 						<aside class="notes">
-							Layered abstractions around the core domain model & business logic towards UI, DB, Messaging Systems etc.
+							<ul>
+								<li>Typical, layered architectures typical provide abstractions "upward" from the domain model used in tli database</li>
+								<li>Hexagonal architecture abstracts not only upward from the database, towards UI, Messaging System, eli as well</li>
+								<li>Layered abstractions around the core domain model & business logic towards UI, DB, Messaging Systems etc.</li>
+							</li>
 						</aside>
 					</section>
 					<section><h3>Promise</h3>
