@@ -42,13 +42,16 @@
 						<aside class="notes">
 							<ul>
 								<li>Layered: Upper layers use lower layers directly</li>
+								<li>Hexagonal: Treat DB, UI, Messaging alike</li>
 								<li>Alistair Cockburn, 2015, "Ports&Adapters"</li>
-								<li>Inner layers must only use the ports they define</li>
+								<li>Inner layers define ports (interfaces) as sole communication points</li>
+								<li>Inner & outer layers implement ports as adapters</li>
 							</li>
 						</aside>
 					</section>
 					<section><h3>Promise</h3>
-						<p class="fragment">Protect your core domain model against leaking, thus making sure that changes in outer layers can never force you to change the core</p>
+						<p class="fragment">Protect your core domain model against leaking</p>						
+						<p class="fragment">Outer layers can never force changes to the core</p>
 					</section>
 					<section><h3>Pitfalls</h3>
 						<p class="fragment">You end up with tons and tons of interfaces and duplications that constantly change during development, creating a unmaintainable mess</p>
