@@ -22,7 +22,7 @@
 						<ul>
 							<li>Welcome to $Event</li>
 							<li>My name is...</li>
-						</li>
+						</ul>
 					</aside>
 				</section>
 				<section>
@@ -34,17 +34,19 @@
 							<li>Patterns that commonly occur in projects</li>
 							<li>Not always a great idea</li>
 							<li>Grain of salt</li>
-						</li>
+						</ul>
 					</aside>
 				</section>
 				<section>
 					<h3>Overview</h3>
-					<p class="fragment">Hexagonal Architecture</p>
-					<p class="fragment">Reactive Programming Models</p>
-					<p class="fragment">CQRS</p>
-					<p class="fragment">Event Sourcing</p>
-					<p class="fragment">Server-Side Rendering of SPAs</p>
-					<p class="fragment">Summary</p>
+					<ul>
+						<li class="fragment">Hexagonal Architecture</li>
+						<li class="fragment">Reactive Programming Models</li>
+						<li class="fragment">CQRS</li>
+						<li class="fragment">Event Sourcing</li>
+						<li class="fragment">Server-Side Rendering of SPAs</li>
+						<li class="fragment">Summary</li>
+					</ul>
 				</section>
 				<section>
 					<section><h2>Hexagonal Architecture</h2></section>
@@ -72,30 +74,45 @@
 								<li>Alistair Cockburn, 2015, "Ports&Adapters"</li>
 								<li>Inner layers define ports (interfaces) as sole communication points</li>
 								<li>Inner & outer layers implement ports as adapters</li>
-							</li>
+							</ul>
 						</aside>
 					</section>
 					<section><h3>Promise</h3>
-						<p class="fragment">Protect your core domain model against leaking</p>						
-						<p class="fragment">Outer layers can never force changes to the core</p>
+						<ul>
+							<li class="fragment">Protect your core domain model against leaking</li>
+							<li class="fragment">Outer layers can never force changes to the core</li>
+						</ul>
 					</section>
 					<section><h3>Pitfalls</h3>
 						<p class="fragment">You end up with tons and tons of interfaces and duplications that constantly change during development, creating a unmaintainable mess</p>
 					</section>
 					<section><h3>Alternatives</h3>
-						<p class="fragment">Apply abstractions where they make sense (eg, around your database entities)</p>
-						<p class="fragment">Apply common sense everywhere else</p>
+						<ul>
+							<li class="fragment">Apply abstractions where they make sense</li>
+							<li class="fragment">Apply common sense everywhere else</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>Good: Abstractions around Web Requests, DB Entities</li>
+								<li>Bad: 17 classes representing the same thing</li>
+							</ul>
+						</aside>
 					</section>
 					<section><h3>Conclusion</h3>
-						<p class="fragment">Preventing your core domain model from leaking to the web is common sense</p>
-						<p class="fragment">Preventing everything from leaking everywhere is ridiculous</p>
+						<ul>
+							<li class="fragment">Preventing your core domain model from leaking to the web is common sense</li>
+							<li class="fragment">Preventing everything from leaking everywhere is ridiculous</li>
+						</ul>
 					</section>
 				</section>
 				<section>
 					<section><h2>Reactive Programming Models</h2></section>
 					<section><h3>What is it?</h3>
-						<p class="fragment">Classic programming models block the current thread while handling an event</p>
-						<p class="fragment">Non-blocking APIs typically register a function to be called when work is done</p>
+						<ul>
+							<li class="fragment">Classic programming models block the current thread while handling an event</li>
+							<li class="fragment">Non-blocking APIs typically register a function to be called when work is done</li>
+						</ul>
 
 						<aside class="notes">
 							<ul>
@@ -106,16 +123,40 @@
 						</aside>
 					</section>
 					<section><h3>Promise</h3>
-						<p class="fragment">Because threads are no longer blocked waiting for downstream work to continue, we can build very responsive APIs, easily handling tens of thousands of requests in seconds</p>
+						<ul>
+							<li class="fragment">Threads not blocked by downstream work</li>
+							<li class="fragment">Very responsive applications</li>
+							<li class="fragment">Tens of thousands of requests in seconds</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>Threads are no longer blocked waiting for downstream work to continue</li>
+								<li>We can build very responsive APIs</li>
+								<li>Easily handling tens of thousands of requests in seconds</li>
+							</ul>
+						</aside>
 					</section>
 					<section><h3>Pitfalls</h3>
-						<p class="fragment">The programming model is very different from classic, imperative code</p>
-						<p class="fragment">The learning curve is very steep, it takes years (!) for a team of old-school java devs to fully embrace non-blocking APIs</p>
-						<p class="fragment">Can be fully leveraged only when downstream APIs (database, external systems, ...) can also be used in a reactive way</p>
+						<ul>
+							<li class="fragment">Very different programming model</li>
+							<li class="fragment">Very steep learning curve</li>
+							<li class="fragment">Blocking downstream APIs</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>The programming model is very different from classic, imperative code</li>
+								<li>The learning curve is very steep, it takes years (!) for a team of old-school java devs to fully embrace non-blocking APIs</li>
+								<li>Can be fully leveraged only when downstream APIs (database, external systems, ...) can also be used in a reactive way</li>
+							</li>
+						</aside>
 					</section>
 					<section><h3>Alternatives</h3>
-						<p class="fragment">Consider expected load scenarios before making design decisions</p>
-						<p class="fragment">In most cases, horizontal scaling might prove to be more cost-efficient</p>
+						<ul>
+							<li class="fragment">Consider expected load scenarios before making design decisions</li>
+							<li class="fragment">In most cases, horizontal scaling might prove to be more cost-efficient</li>
+						</ul>
 					</section>
 					<section><h3>Conclusion</h3>
 						<p class="fragment">From the Spring WebFlux documentation:</p>
@@ -202,8 +243,8 @@
 					</section>
 				</section>
 				<section>
-					<section><h2>The Quest for simplicty</h2></section>
-					<section><h3>The Quest for simplicty</h3>
+					<section><h2>The quest for simplicty</h2></section>
+					<section><h3>The quest for simplicty</h3>
 						<p class="fragment">Aim for the simplest possible solution</p>
 						<p class="fragment">Non-functional requirements matter!</p>
 						<p class="fragment">Consider the available skill set</p>
