@@ -139,7 +139,7 @@
 					</section>
 					<section><h3>Pitfalls</h3>
 						<ul>
-							<li class="fragment">Very different programming model TODO: example</li>
+							<li class="fragment">Very different programming model</li>
 							<li class="fragment">Very steep learning curve</li>
 							<li class="fragment">Blocking downstream APIs</li>
 						</ul>
@@ -147,6 +147,8 @@
 						<aside class="notes">
 							<ul>
 								<li>The programming model is very different from classic, imperative code</li>
+								<li>Call method, use return value vs. fluent api & .then()</li>
+								<li>exception handling vs. onError()</li>
 								<li>The learning curve is very steep, it takes years (!) for a team of old-school java devs to fully embrace non-blocking APIs</li>
 								<li>Can be fully leveraged only when downstream APIs (database, external systems, ...) can also be used in a reactive way</li>
 							</li>
@@ -212,7 +214,7 @@
 					<section><h2>Event Sourcing</h2></section>
 					<section><h3>What is it?</h3>
 						<p class="fragment">Persistence pattern where the state of an aggregate (business object) is maintained as a stream of business events (called the event log) manipulating said aggregate</p>
-						<p class="fragment">Event = immutable factn</p>
+						<p class="fragment">Event = immutable fact</p>
 					</section>
 					<section><h3>Promise</h3>
 						<p class="fragment">Focus on change instead of state leads to reactive, responsive systems TODO: why?</p>
