@@ -232,7 +232,7 @@
 								<li>Events should be immutable</li>
 								<li>Schema evolution: Must be able to re-build aggregates from old events</li>
 								<li>Very steep learning curve</li>
-							</li>
+							</ul>
 						</aside>
 					</section>
 					<section><h3>Alternatives</h3>
@@ -251,12 +251,29 @@
 						<p class="fragment">The app is then "hydrated" in the browser, making it fully operational</p>
 					</section>
 					<section><h3>Promise</h3>
-						<p class="fragment">Instead of downloading multiple megabytes of resources prior to bootstrapping, the first assets to be transferred are already usable HTML</p>
+						<p class="fragment">First data to be transferred is usable HTML</p>
+						<p class="fragment">Browser can render instantly, without executing any JS</p>
 						<p class="fragment">Faster load times, less flicker</p>
+
+						<aside class="notes">
+							<ul>
+								<li>Instead of downloading multiple megabytes of resources prior to bootstrapping, the first assets to be transferred are already usable HTML</li>
+								<li>Browser can instantly render, no JS needed</li>
+								<li>App becomes usable much faster</li>
+								<li>Less content flicker</li>
+							</ul>
+						</aside>
 					</section>
 					<section><h3>Pitfalls</h3>
-						<p class="fragment">We need to build an SPA that can be rendered in the backend and then be hydrated in the browser</p>
-						<p class="fragment">There are SPA frameworks promising to deliver server-side rendering with a smooth developer experience (hi Nuxt &#128075;), but offer a questionable experience in other aspects (our test API is still in development and should not be used for production &#128169;) TODO: shorten</p>
+						<p class="fragment">SPA must support rendering in browser as well as backend & hydration</p>
+						<p class="fragment">Most server-side rendering frameworks are not production-ready</p>
+						
+						<aside class="notes">
+							<ul>
+								<li>There are SPA frameworks promising to deliver server-side rendering with a smooth developer experience (hi Nuxt &#128075;),</li>
+								<li>but offer a questionable experience in other aspects (our test API is still in development and should not be used for production &#128169;)</li>			
+							</ul>
+						</aside>
 					</section>
 					<section><h3>Alternatives</h3>
 						<p class="fragment">On mondern 4g/5g networks, transmitting a few megabytes is no longer an issue</p>
