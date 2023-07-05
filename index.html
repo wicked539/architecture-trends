@@ -139,7 +139,7 @@
 					</section>
 					<section><h3>Pitfalls</h3>
 						<ul>
-							<li class="fragment">Very different programming model</li>
+							<li class="fragment">Very different programming model TODO: example</li>
 							<li class="fragment">Very steep learning curve</li>
 							<li class="fragment">Blocking downstream APIs</li>
 						</ul>
@@ -170,7 +170,19 @@
 				<section>
 					<section><h2>CQRS</h2></section>
 					<section><h3>What is it?</h3>
-						<p class="fragment">Command-query responsibilty segregation essentials means separating the write- and the read-models of your application</p>
+						<ul>
+							<li class="fragment">Command-query responsibilty segregation</li>
+							<li class="fragment">Separate write- & read-models</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Command-query responsibilty segregation</li>
+								<li>Essentially means separating the write- and the read-models of your app</li>
+								<li>Commands change data -> write</li>
+								<li>Queries read data -> read</li>
+								<li>Described by Greg Young, 2010</li>
+							</li>
+						</aside>
 					</section>
 					<section><h3>Promise</h3>
 						<p class="fragment">Applications with an asymmetric read-write load (lots of writes, very little reads) and APIs (read operations require computed outputs, message/command-driven write APIs) benefit from seperate models</p>
@@ -199,16 +211,27 @@
 				<section>
 					<section><h2>Event Sourcing</h2></section>
 					<section><h3>What is it?</h3>
-						<p class="fragment">Persistance pattern where the state of an aggregate (business object) is maintained as a stream of business events manipulating said aggregate</p>
+						<p class="fragment">Persistence pattern where the state of an aggregate (business object) is maintained as a stream of business events (called the event log) manipulating said aggregate</p>
+						<p class="fragment">Event = immutable factn</p>
 					</section>
 					<section><h3>Promise</h3>
-						<p class="fragment">Focus on change instead of state leads to reactive, responsive systems</p>
+						<p class="fragment">Focus on change instead of state leads to reactive, responsive systems TODO: why?</p>
 						<p class="fragment">All domain objects implicitly have a history</p>
 					</section>
 					<section><h3>Pitfalls</h3>
 						<p class="fragment">Very complex persistence pattern</p>
 						<p class="fragment">Usually implemented along with CQRS, leading to expotentially more complex software systems</p>
-						<p class="fragment">When used with CQRS, we aren't allowed to query the aggregates! Instead, we have to provide separate read models called projections</p>
+						<p class="fragment">When used with CQRS, we aren't allowed to query the aggregates! Instead, we have to provide separate read models called projections TODO: shorten</p>
+						<p class="fragment">Very steep learning curve</p>
+
+						<aside class="notes">
+							<ul>
+								<li>Persist events, build aggregates to handle events</li>
+								<li>Events should be immutable</li>
+								<li>Schema evolution: Must be able to re-build aggregates from old events</li>
+								<li>Very steep learning curve</li>
+							</li>
+						</aside>
 					</section>
 					<section><h3>Alternatives</h3>
 						<p class="fragment">Event-driven systems can easily be build using CRUD APIs</p>
@@ -231,7 +254,7 @@
 					</section>
 					<section><h3>Pitfalls</h3>
 						<p class="fragment">We need to build an SPA that can be rendered in the backend and then be hydrated in the browser</p>
-						<p class="fragment">There are SPA frameworks promising to deliver server-side rendering with a smooth developer experience (hi Nuxt &#128075;), but offer a questionable experience in other aspects (our test API is still in development and should not be used for production &#128169;)</p>
+						<p class="fragment">There are SPA frameworks promising to deliver server-side rendering with a smooth developer experience (hi Nuxt &#128075;), but offer a questionable experience in other aspects (our test API is still in development and should not be used for production &#128169;) TODO: shorten</p>
 					</section>
 					<section><h3>Alternatives</h3>
 						<p class="fragment">On mondern 4g/5g networks, transmitting a few megabytes is no longer an issue</p>
@@ -268,7 +291,12 @@
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				// left / right arrow keys navigate to 'next' / 'prev' slide (instead of horizontal navigation)
+				keyboard: {
+				    39: 'next',
+				    37: 'prev'
+				}
 			});
 		</script>
 	</body>
