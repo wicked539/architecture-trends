@@ -187,7 +187,20 @@
 						</aside>
 					</section>
 					<section><h3>Promise</h3>
-						<p class="fragment">Applications with an asymmetric read-write load (lots of writes, very little reads) and APIs (read operations require computed outputs, message/command-driven write APIs) benefit from seperate models</p>
+						<ul>
+							<li class="fragment">APIs with asymmetric read-write load</li>
+							<li class="fragment">APIs where queries require computed outputs</li>
+							<li class="fragment">Message-driven APIs</li>
+						</ul>
+						<p class="fragment">...all benefit from separate models</p>
+
+						<aside class="notes">
+							<ul>
+								<li>Asymmetric read-write load (lots of writes, very little reads)</li>
+								<li>Asymmetric APIs (read operations require computed outputs, message/command-driven write APIs)</li>
+								<li>...all benefit from separate models</li>
+							</li>
+						</aside>
 					</section>
 					<section><h3>Pitfalls</h3>
 						<p class="fragment">Maintaining separate models, along with controller classes, business logic, persistence layers etc, leads to far more complex software projects</p>
@@ -195,7 +208,7 @@
 					</section>
 					<section><h3>Alternatives</h3>
 						<p class="fragment">Always consider using a plain CRUD API first</p>
-						<p class="fragment">When starting out with CRUD API, we can "evolve" a separate write API over time, keeping the CRUD API for read operations</p>
+						<p class="fragment">Start CRUD API, evolve a separate write API over time, keeping the CRUD API for queries</p>
 					</section>
 					<section><h3>Conclusion</h3>
 						<p class="fragment">From Greg Young's blog:</p>
@@ -213,17 +226,33 @@
 				<section>
 					<section><h2>Event Sourcing</h2></section>
 					<section><h3>What is it?</h3>
-						<p class="fragment">Persistence pattern where the state of an aggregate (business object) is maintained as a stream of business events (called the event log) manipulating said aggregate</p>
+						<p class="fragment">Persistence pattern where the state of an aggregate is maintained as a stream of business events</p>
 						<p class="fragment">Event = immutable fact</p>
+						<p class="fragment">Aggregate = business object</p>
+						<p class="fragment">Event log = stream of events</p>
+
+						<aside class="notes">
+							<ul>
+								<li>Instead of state of a business object, we persist the changes manipulating it</li>
+							</ul>
+						</aside>
 					</section>
 					<section><h3>Promise</h3>
-						<p class="fragment">Focus on change instead of state leads to reactive, responsive systems TODO: why?</p>
+						<p class="fragment">Focus on change instead of state makes building reactive systems easier</p>
 						<p class="fragment">All domain objects implicitly have a history</p>
+
+						<aside class="notes">
+							<ul>
+								<li>Business is driven by events</li>
+								<li>Software should be driven by events, too</li>
+								<li>Ability to time travel</li>
+							</ul>
+						</aside>
 					</section>
 					<section><h3>Pitfalls</h3>
 						<p class="fragment">Very complex persistence pattern</p>
 						<p class="fragment">Usually implemented along with CQRS, leading to expotentially more complex software systems</p>
-						<p class="fragment">When used with CQRS, we aren't allowed to query the aggregates! Instead, we have to provide separate read models called projections TODO: shorten</p>
+						<p class="fragment">When used with CQRS, the aggregates aren't allowed to answer queries</p>
 						<p class="fragment">Very steep learning curve</p>
 
 						<aside class="notes">
@@ -231,6 +260,7 @@
 								<li>Persist events, build aggregates to handle events</li>
 								<li>Events should be immutable</li>
 								<li>Schema evolution: Must be able to re-build aggregates from old events</li>
+								<li>When used with CQRS, we aren't allowed to query the aggregates! Instead, we have to provide separate read models called projections</li>
 								<li>Very steep learning curve</li>
 							</ul>
 						</aside>
