@@ -117,6 +117,7 @@
 						<aside class="notes">
 							<ul>
 								<li>Implementation: observer pattern</li>
+								<li>Instead of using return value of a method, we supply a callback</li>
 								<li>We need to handle streams of events, "reactive streams"</li>
 								<li>Including callbacks for error handling</li>
 							</li>
@@ -149,6 +150,7 @@
 								<li>The programming model is very different from classic, imperative code</li>
 								<li>Call method, use return value vs. fluent api & .then()</li>
 								<li>exception handling vs. onError()</li>
+								<li>Debugging is harder</li>
 								<li>The learning curve is very steep, it takes years (!) for a team of old-school java devs to fully embrace non-blocking APIs</li>
 								<li>Can be fully leveraged only when downstream APIs (database, external systems, ...) can also be used in a reactive way</li>
 							</li>
@@ -226,10 +228,13 @@
 				<section>
 					<section><h2>Event Sourcing</h2></section>
 					<section><h3>What is it?</h3>
-						<p class="fragment">Persistence pattern where the state of an aggregate is maintained as a stream of business events</p>
-						<p class="fragment">Event = immutable fact</p>
-						<p class="fragment">Aggregate = business object</p>
-						<p class="fragment">Event log = stream of events</p>
+						<p class="fragment">Persistence pattern where the state of an aggregate is maintained as a stream of events</p>
+
+						<ul>
+							<li class="fragment">Event = immutable fact</li>
+							<li class="fragment">Aggregate = business object</li>
+							<li class="fragment">Event log = stream of events</li>
+						</ul>
 
 						<aside class="notes">
 							<ul>
@@ -266,7 +271,7 @@
 						</aside>
 					</section>
 					<section><h3>Alternatives</h3>
-						<p class="fragment">Event-driven systems can easily be build using CRUD APIs</p>
+						<p class="fragment">Event-driven systems can easily be build using simple persistence patterns</p>
 						<p class="fragment">When a history of domain objects is required (eg, for auditing), consider using envers</p>
 					</section>
 					<section><h3>Conclusion</h3>
@@ -282,7 +287,7 @@
 					</section>
 					<section><h3>Promise</h3>
 						<p class="fragment">First data to be transferred is usable HTML</p>
-						<p class="fragment">Browser can render instantly, without executing any JS</p>
+						<p class="fragment">Browser can render instantly, without executing JS</p>
 						<p class="fragment">Faster load times, less flicker</p>
 
 						<aside class="notes">
@@ -307,7 +312,7 @@
 					</section>
 					<section><h3>Alternatives</h3>
 						<p class="fragment">On mondern 4g/5g networks, transmitting a few megabytes is no longer an issue</p>
-						<p class="fragment">Consider usabilty instead: On mobile devives, building offline-first apps that rarely need a full-page reload is much more desirable</p>
+						<p class="fragment">Consider usabilty instead: On mobile devices, building offline-first apps that rarely need a full-page reload is much more desirable</p>
 					</section>
 					<section><h3>Conclusion</h3>
 						<p class="fragment">Server-side templating is great</p>
