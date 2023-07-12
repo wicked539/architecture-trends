@@ -4,7 +4,11 @@
 
 In der modernen Softwareentwicklung haben sich im Laufe der letzten Jahre viele Patterns und Technologien etabliert, die auf den ersten Blick fortschrittlich und vorteilhaft erscheinen, aber eine entscheidende Gemeinsamkeit haben: Hohe Komplexität. Hexagonale Architektur, Reaktive Programmiermodelle und Event Sourcing sind einige Beispiele für solche Architekturmuster. Anhand von praktischen Beispielen möchte dieser Vortrag diverse Patterns, Methoden und Technologien beleuchten... und wie (und wieso) man diese am besten vermeidet.
 
-### Run
+### Show slides
+
+https://wicked539.github.io/architecture-trends/
+
+### Run locally
 
 * ``` $ npm i && npm start ```
 * Open http://localhost:8000 in browser
