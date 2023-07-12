@@ -6,4 +6,8 @@ In der modernen Softwareentwicklung haben sich im Laufe der letzten Jahre viele 
 
 ### Run
 
-``` $ npm i && npm start ```
+* ``` $ npm i && npm start ```
+* Open http://localhost:8000 in browser
+* Navigate through slides with <kbd>n</kbd> / <kbd>p</kbd>
+
+Based on awesome https://revealjs.com/!
