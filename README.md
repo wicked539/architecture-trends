@@ -6,12 +6,12 @@ In der modernen Softwareentwicklung haben sich im Laufe der letzten Jahre viele 
 
 ### Show slides
 
-https://wicked539.github.io/architecture-trends/
+* https://wicked539.github.io/architecture-trends/
+* Navigate through slides with <kbd>n</kbd> / <kbd>p</kbd>
 
 ### Run locally
 
 * ``` $ npm i && npm start ```
 * Open http://localhost:8000 in browser
-* Navigate through slides with <kbd>n</kbd> / <kbd>p</kbd>
 
 Based on awesome https://revealjs.com/!
