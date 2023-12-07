@@ -137,7 +137,6 @@
 							<ul>
 								<li>Implementation: observer pattern</li>
 								<li>Instead of using return value of a method, we supply a callback</li>
-								<li>We need to handle streams of events, "reactive streams"</li>
 								<li>Including callbacks for error handling</li>
 							</li>
 						</aside>
@@ -179,13 +178,15 @@
 						<ul>
 							<li class="fragment">Consider expected load scenarios before making design decisions</li>
 							<li class="fragment">In most cases, horizontal scaling might prove to be more cost-efficient</li>
-							<li class="fragment">In Java, Virtual Threads basically make reactive APIs obsolete</li>
+							<li class="fragment">In Java, Virtual Threads might make reactive APIs obsolete</li>
 						</ul>
 
 						<aside class="notes">
 							<ul>
-								<li>TODO: Virtual Threads</li>
 								<li>Virtual Threads left preview state with Java 21</li>
+								<li>Faster thread switching than system threads</li>
+								<li>Still some problems with syncronized (MySQL JDBC)</li>
+								<li>Spring Boot: TomcatProtocolHandlerCustomizer -> setExecutor</li>
 							</li>
 						</aside>
 					</section>
