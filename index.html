@@ -68,11 +68,12 @@
 
 						<aside class="notes">
 							<ul>
-								<li>Layered: Upper layers use lower layers directly</li>
+								<li>Layered: Upper layers use lower layers directly, model classes mapped</li>
 								<li>Hexagonal: Treat DB, UI, Messaging alike</li>
 								<li>Alistair Cockburn, 2015, "Ports&Adapters"</li>
 								<li>Inner layers define ports (interfaces) as sole communication points</li>
 								<li>Inner & outer layers implement ports as adapters</li>
+								<li>Plus: All the model classes still need to be mapped</li>
 							</ul>
 						</aside>
 					</section>
@@ -87,22 +88,41 @@
 					</section>
 					<section><h3>Alternatives</h3>
 						<ul>
+							<li class="fragment">What do you want to achieve?
+								<ul>
+									<li class="fragment">Protect core domain<span class="fragment"> => Why ports & adapters?</span></li>
+									<li class="fragment">Enforce architectural rules<span class="fragment"> => ArchUnit</span></li>
+								</ul>
+							</li>
 							<li class="fragment">Apply abstractions where they make sense</li>
 							<li class="fragment">Apply common sense everywhere else</li>
 						</ul>
 
 						<aside class="notes">
 							<ul>
-								<li>Good: Abstractions around Web Requests, DB Entities</li>
-								<li>Bad: 17 classes representing the same thing</li>
+								<li>Original idea: Two problems with layers
+									<ul>
+										<li>People dont follow rules</li>
+										<li>Does not fit to more than two ports (ui & db)</li>
+									</ul>
+								</li>
 							</ul>
 						</aside>
+
 					</section>
 					<section><h3>Conclusion</h3>
 						<ul>
 							<li class="fragment">Preventing your core domain model from leaking to the web is common sense</li>
-							<li class="fragment">Preventing everything from leaking everywhere is ridiculous</li>
+							<li class="fragment">Dozens of interfaces with exactly one implementation are ridiculous</li>
 						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>Good: Abstractions around Web Requests, DB Entities</li>
+								<li>Bad: 17 classes representing the same thing</li>
+								<li>Original idea: At least two implementations of port!</li>
+							</ul>
+						</aside>
 					</section>
 				</section>
 				<section>
