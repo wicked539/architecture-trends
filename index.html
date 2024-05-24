@@ -129,8 +129,9 @@
 					<section><h2>Reactive Programming Models</h2></section>
 					<section><h3>What is it?</h3>
 						<ul>
-							<li class="fragment">Classic programming models block the current thread while handling an event</li>
-							<li class="fragment">Non-blocking APIs typically register a function to be called when work is done</li>
+							<li class="fragment">Classic, blocking programming models perform all the work for a request on the same thread (Thread per Request-Model)</li>
+							<li class="fragment">Reactive programming models perform work on Event Loop threads (Event Loop Model)</li>
+							<li class="fragment">Non-blocking APIs typically use callback functions to be called when work is done</li>
 						</ul>
 
 						<aside class="notes">
@@ -138,7 +139,8 @@
 								<li>Implementation: observer pattern</li>
 								<li>Instead of using return value of a method, we supply a callback</li>
 								<li>Including callbacks for error handling</li>
-								<li>TODO: graphic example of code style</li>
+								<li>Tomcat: Thread per Request Model, supplied from Threadpool</li>
+								<li>Netty: Event Loop Model: Channel (Connection) with Pipeline of Handlers, executed by EventLoop (Thread)</li>
 							</li>
 						</aside>
 					</section>
@@ -167,6 +169,7 @@
 						<aside class="notes">
 							<ul>
 								<li>The programming model is very different from classic, imperative code</li>
+								<li>TODO: graphic example of code style</li>
 								<li>Call method, use return value vs. fluent api & .then()</li>
 								<li>exception handling vs. onError()</li>
 								<li>Debugging is harder</li>
