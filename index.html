@@ -261,6 +261,29 @@
 				<section>
 					<section><h2>Event Sourcing</h2></section>
 					<section><h3>What is it?</h3>
+						<div style="display: flex;">
+							<div class="fragment" style="flex: 1">
+								<div class="r-stack">
+									<img src="assets/simple-persistence.png" height="400">
+								</div>
+								<p style="white-space:nowrap; width:400px; vertical-align:top;">Object Persistence</p>
+							</div>
+							<div class="fragment" style="flex: 2">
+								<div class="r-stack">
+									<img src="assets/event-sourcing.png" height="400">
+								</div>
+								<p>Event Sourcing</p>	
+							</div>
+						</div>
+
+						<aside class="notes">
+							<ul>
+								<li>Instead of state of a business object, we persist the changes manipulating it</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section><h3>What is it?</h3>
 						<p class="fragment">Persistence pattern where the state of an aggregate is maintained as a stream of events</p>
 
 						<ul>
@@ -271,8 +294,7 @@
 
 						<aside class="notes">
 							<ul>
-								<li>TODO: add drawings here</li>
-								<li>Instead of state of a business object, we persist the changes manipulating it</li>
+								<li>TODO: slide needed?</li>
 							</ul>
 						</aside>
 					</section>
