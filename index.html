@@ -270,7 +270,8 @@
 							</div>
 							<div class="fragment" style="flex: 2">
 								<div class="r-stack">
-									<img src="assets/event-sourcing.png" height="400">
+									<img src="assets/event-sourcing.png" height="354" style="margin-top: 36px;margin-left: 158px;">
+									<img class="fragment" src="assets/event-sourcing-legend.png" height="400">
 								</div>
 								<p>Event Sourcing</p>	
 							</div>
@@ -279,25 +280,13 @@
 						<aside class="notes">
 							<ul>
 								<li>Instead of state of a business object, we persist the changes manipulating it</li>
+								<li >Event = immutable fact</li>
+								<li >Aggregate = business object</li>
+								<li >Event log = stream of events</li>
 							</ul>
 						</aside>
 					</section>
 
-					<section><h3>What is it?</h3>
-						<p class="fragment">Persistence pattern where the state of an aggregate is maintained as a stream of events</p>
-
-						<ul>
-							<li class="fragment">Event = immutable fact</li>
-							<li class="fragment">Aggregate = business object</li>
-							<li class="fragment">Event log = stream of events</li>
-						</ul>
-
-						<aside class="notes">
-							<ul>
-								<li>TODO: slide needed?</li>
-							</ul>
-						</aside>
-					</section>
 					<section><h3>Promise</h3>
 						<p class="fragment">Focus on change instead of state makes building reactive systems easier</p>
 						<p class="fragment">All domain objects implicitly have a history</p>
