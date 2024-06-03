@@ -129,19 +129,20 @@
 					<section><h2>Reactive Programming Models</h2></section>
 					<section><h3>What is it?</h3>
 						<ul>
-							<li class="fragment">Classic, blocking programming models perform all the work for a request on the same thread (Thread per Request-Model)</li>
-							<li class="fragment">Reactive programming models perform work on Event Loop threads (Event Loop Model)</li>
-							<li class="fragment">Non-blocking APIs typically use callback functions or Futures to be called when work is done</li>
+							<li class="fragment">Classic, blocking programming models<br>
+								&nbsp;<span class="fragment"> &rarr; Thread per Request-Model</span><br>
+								&nbsp;<span class="fragment"> &rarr; Methods return results</span></li>
+							<li class="fragment">Reactive programming models<br>
+								&nbsp;<span class="fragment"> &rarr; Event Loop Model</span><br>
+								&nbsp;<span class="fragment"> &rarr; Callback functions or Futures</span></li>
 						</ul>
 
 						<aside class="notes">
 							<ul>
-								<li>Implementation: observer pattern</li>
-								<li>Instead of using return value of a method, we supply a callback</li>
-								<li>Including callbacks for error handling</li>
-								<li>Alternative: Futures / Mono&Flux in Reactor</li>
 								<li>Tomcat: Thread per Request Model, supplied from Threadpool</li>
 								<li>Netty: Event Loop Model: Channel (Connection) with Pipeline of Handlers, executed by EventLoop (Thread)</li>
+								<li>Callbacks (incl error!) or Futures / Mono&Flux in Reactor</li>
+								<li>Implementation: observer pattern</li>
 							</li>
 						</aside>
 					</section>
