@@ -21,7 +21,8 @@
 					<aside class="notes">
 						<ul>
 							<li>Welcome to $Event</li>
-							<li>My name is...</li>
+							<li>Dev at synyx</li>
+							<li>Architect, dont like the title, but the talk is a about architectur</li>
 						</ul>
 					</aside>
 				</section>
@@ -32,8 +33,8 @@
 						<ul>
 							<li>Modern software architecture</li>
 							<li>Patterns that commonly occur in projects</li>
-							<li>Not always a great idea</li>
-							<li>Grain of salt</li>
+							<li>Not always a great idea: how to avoid them</li>
+							<li>Everything is based on personal experiences</li>
 						</ul>
 					</aside>
 				</section>
@@ -68,12 +69,12 @@
 
 						<aside class="notes">
 							<ul>
-								<li>Layered: Upper layers use lower layers directly, model classes mapped</li>
-								<li>Hexagonal: Treat DB, UI, Messaging alike</li>
+								<li>Layered: Upper layers use lower layers, model classes mapped</li>
+								<li>Hex: Treat DB, UI, Messaging alike</li>
 								<li>Alistair Cockburn [Coburn], 2015, "Ports&Adapters"</li>
 								<li>Inner layers define ports (interfaces) as sole communication points</li>
-								<li>Inner & outer layers implement ports as adapters</li>
-								<li>Plus: All the model classes still need to be mapped</li>
+								<li>Inner & outer layers impl adapters</li>
+								<li>Plus: Model classes mappers!</li>
 							</ul>
 						</aside>
 					</section>
@@ -84,7 +85,17 @@
 						</ul>
 					</section>
 					<section><h3>Pitfalls</h3>
-						<p class="fragment">You end up with tons and tons of interfaces and duplications that constantly change during development, creating a unmaintainable mess</p>
+						<p class="fragment">You end up with lots of interfaces and duplications that constantly change during development, creating a hard-to-maintain codebase</p>
+
+						<aside class="notes">
+							<ul>
+								<li>Domain model evolves during development</li>
+								<li>Model classes, ports, adapaters and mappers change with each iteration</li>
+								<li>Once development is finished, hexagonal is a nice thing, but...</li>
+								<li>...devs are tired by then</li>
+								<li>...you cannot add it to finished project</li>
+							</ul>
+						</aside>
 					</section>
 					<section><h3>Alternatives</h3>
 						<ul>
