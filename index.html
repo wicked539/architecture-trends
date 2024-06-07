@@ -320,10 +320,9 @@
 						<aside class="notes">
 							<ul>
 								<li>Persist events, build aggregates to handle events</li>
-								<li>Events should be immutable</li>
+								<li>Events must be immutable, problematic /w personal data</li>
 								<li>Schema evolution: Must be able to re-build aggregates from old events</li>
-								<li>When used with CQRS, we aren't allowed to query the aggregates! Instead, we have to provide separate read models called projections</li>
-								<li>Very steep learning curve</li>
+								<li>With CQRS, we cant query the aggregates -> must build read models (projections)</li>
 							</ul>
 						</aside>
 					</section>
