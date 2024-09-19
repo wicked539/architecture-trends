@@ -202,7 +202,7 @@
 							<ul>
 								<li>Virtual Threads left preview state with Java 21</li>
 								<li>Faster thread switching than system threads</li>
-								<li>Still some problems with syncronized (MySQL JDBC)</li>
+								<li>Still some problems with syncronized (MySQL JDBC fixed in 9.x / July 24)</li>
 								<li>Spring Boot: spring.threads.virtual.enabled=true</li>
 							</li>
 						</aside>
@@ -246,7 +246,7 @@
 								<li>Asymmetric read-write load (lots of writes, very little reads)</li>
 								<li>Asymmetric APIs (read operations require computed outputs, message/command-driven write APIs)</li>
 								<li>...all benefit from separate models</li>
-								<li>TODO: mention CQS</li>
+								<li>CQS: command query separation, separate APIs only</li>
 							</li>
 						</aside>
 					</section>
