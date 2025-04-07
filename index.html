@@ -196,13 +196,15 @@
 							<li class="fragment">Consider expected load scenarios before making design decisions</li>
 							<li class="fragment">In most cases, horizontal scaling might prove to be more cost-efficient</li>
 							<li class="fragment">In Java, Virtual Threads might make reactive APIs obsolete</li>
+							<li class="fragment"><code>spring.threads.virtual.enabled=true</code></li>
 						</ul>
 
 						<aside class="notes">
 							<ul>
 								<li>Virtual Threads left preview state with Java 21</li>
 								<li>Faster thread switching than system threads</li>
-								<li>Still some problems with syncronized (MySQL JDBC fixed in 9.x / July 24)</li>
+								<li>Java 21 had issues with synchronized & blocking op (Inputstream.read(...) etc), eg. MySQL JDBC</li>
+								<li>MySQL fixed in 9.x / July 24) / Java 24 fixes thread pinning alltogether!</li>
 								<li>Spring Boot: spring.threads.virtual.enabled=true</li>
 							</li>
 						</aside>
