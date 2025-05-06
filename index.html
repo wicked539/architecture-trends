@@ -72,6 +72,7 @@
 								<li>Layered: Upper layers use lower layers, model classes mapped</li>
 								<li>Hex: Treat DB, UI, Messaging alike</li>
 								<li>Alistair Cockburn [Coburn], 2005, "Ports&Adapters"</li>
+								<li>Book "Hex Arch Explained" pre-relase 2024</li>
 								<li>Inner layers define ports (interfaces) as sole communication points</li>
 								<li>Inner & outer layers impl adapters</li>
 								<li>Plus: Model classes mappers!</li>
@@ -82,6 +83,8 @@
 						<ul>
 							<li class="fragment">Protect your core domain model against leaking</li>
 							<li class="fragment">Outer layers can never force changes to the core</li>
+							<li class="fragment">Allows applications to specify <em>required interface</em></li>
+							<li class="fragment">Replacing adapters with mocks for testing is easy</li>
 						</ul>
 					</section>
 					<section><h3>Pitfalls</h3>
@@ -93,6 +96,7 @@
 								<li>Model classes, ports, adapaters and mappers change with each iteration</li>
 								<li>Once development is finished, hexagonal is a nice thing, but...</li>
 								<li>...devs are tired by then</li>
+								<li>...easy to get confused (adapters calling adapters etc)</li>
 								<li>...you cannot add it to finished project</li>
 							</ul>
 						</aside>
@@ -103,6 +107,7 @@
 								<ul>
 									<li class="fragment">Protect core domain<span class="fragment"> &rarr; Why ports & adapters?</span></li>
 									<li class="fragment">Enforce architectural rules<span class="fragment"> &rarr; ArchUnit</span></li>
+									<li class="fragment">Replace adapters for testing<span class="fragment"> &rarr; Mockito</span></li>
 								</ul>
 							</li>
 							<li class="fragment">Apply abstractions where they make sense</li>
@@ -117,6 +122,7 @@
 										<li>Does not fit to more than two ports (ui & db)</li>
 									</ul>
 								</li>
+								<li>In a self-contained system, why would you want to hide your DB from your App?</li>
 							</ul>
 						</aside>
 
@@ -125,6 +131,7 @@
 						<ul>
 							<li class="fragment">Preventing your core domain model from leaking to the web is common sense</li>
 							<li class="fragment">Dozens of interfaces with exactly one implementation are ridiculous</li>
+							<li class="fragment">Read <em>"Hexagonal Architecture Explained"</em></li>
 						</ul>
 
 						<aside class="notes">
